@@ -1,0 +1,39 @@
+ext {
+    versionCode = 1
+    versionName = "1.0.0"
+
+    // Kotlin
+    kotlinVersion = '1.3.61'
+
+    // Android Sdk and tools
+    androidGradlePlugin = '3.5.3'
+    gmsGradleVersion = '3.1.2'
+    compileSdkVersion = 29
+    buildToolsVersion = "28.0.3"
+    minSdkVersion = 19
+    targetSdkVersion = 29
+
+    // Google
+    supportVersion = "1.1.0"
+    contraintLayoutVersion = "1.1.3"
+    androidArchiLifecycleVersion = "2.2.0"
+    androidArchiRoomVersion = "1.1.1"
+    navVersion = "2.2.0"
+
+    // Square versions
+    retrofitVersion = "2.2.0"
+
+    //Others
+    koinVersion = "1.0.2"
+    rxJavaVersion = "2.1.16"
+    rxAndroidVersion = "2.0.2"
+    jodaTimeVersion = "2.10.1"
+    glideVersion = "4.9.0"
+
+    // Tests
+    junitVersion              = '4.12'
+    mockitoVersion            = '2.1.0'
+    mockitoInlineVersion     = '2.8.9'
+    assertjVersion            = '3.11.1'
+    dataproviderVersion       = '2.0'
+}

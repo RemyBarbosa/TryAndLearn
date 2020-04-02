@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Rocket Skill</string>
+
+    <string name="hourly_weather">Weather Detail here :)</string>
+</resources>
