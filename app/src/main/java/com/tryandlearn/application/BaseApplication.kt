@@ -7,10 +7,13 @@ import com.tryandlearn.application.di.applicationInjectionsModules
 
 open class BaseApplication : Application() {
 
+    open val koinApplicationInjectionsModules = applicationInjectionsModules
     override fun onCreate() {
         super.onCreate()
 
-        startKoin(this, applicationInjectionsModules)
+        startKoin(this, koinApplicationInjectionsModules)
         Stetho.initializeWithDefaults(this)
     }
+
+
 }

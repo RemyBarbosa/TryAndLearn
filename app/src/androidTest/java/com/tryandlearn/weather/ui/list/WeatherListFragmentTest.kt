@@ -54,7 +54,7 @@ class WeatherListFragmentTest {
             override fun dispatch(request: RecordedRequest): MockResponse {
                 return MockResponse()
                     .setResponseCode(200)
-                    .setBody(FileReader.readStringFromFile("response.json"))
+                    .setBody(FileReader.readStringFromFile("body_files/response.json"))
             }
         })
         reloadActivity()
