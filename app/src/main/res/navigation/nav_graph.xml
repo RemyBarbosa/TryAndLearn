@@ -6,7 +6,7 @@
     app:startDestination="@id/weatherListFragment">
     <fragment
         android:id="@+id/weatherListFragment"
-        android:name="com.rocketskill.weather.ui.list.WeatherListFragment"
+        android:name="com.tryandlearn.weather.ui.list.WeatherListFragment"
         android:label="fragment_weather_list"
         tools:layout="@layout/fragment_weather_list" >
         <action
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/weatherDetailFragment"
-        android:name="com.rocketskill.weather.ui.detail.WeatherDetailFragment"
+        android:name="com.tryandlearn.weather.ui.detail.WeatherDetailFragment"
         android:label="fragment_weather_detail"
         tools:layout="@layout/fragment_weather_detail" >
         <argument
