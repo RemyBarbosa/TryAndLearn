@@ -1,4 +1,4 @@
-package com.tryandlearn.weather.ui.util
+package com.tryandlearn.util
 
 import android.view.View
 import androidx.annotation.NonNull
