@@ -38,7 +38,7 @@ dependencies {
     implementation project(":interface-adapter")
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
     implementation "androidx.appcompat:appcompat:$supportVersion"
-    implementation "androidx.core:core-ktx:$supportVersion"
+    implementation "androidx.core:core-ktx:$coreKtxVersion"
 
     implementation "androidx.constraintlayout:constraintlayout:$contraintLayoutVersion"
     implementation "org.koin:koin-android-viewmodel:$koinVersion"
@@ -59,7 +59,6 @@ dependencies {
     implementation 'com.facebook.stetho:stetho-okhttp3:1.5.1'
 
     testImplementation "junit:junit:$junitVersion"
-//    debugImplementation 'androidx.fragment:fragment-testing:1.2.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test:rules:1.2.0'
