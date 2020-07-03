@@ -14,8 +14,8 @@ data class WeatherRemote(
     class Mapper {
         fun toEntity(weatherRemote: WeatherRemote) = Weather(
             dateTime = weatherRemote.dt ?: 0,
-            kind = getKind(weatherRemote.weather.get(0)?.main),
-            description = weatherRemote.weather.get(0)?.description ?: DEFAULT_DESCRIPTION
+            kind = getKind(weatherRemote.weather.getOrNull(0)?.main),
+            description = weatherRemote.weather.getOrNull(0)?.description ?: DEFAULT_DESCRIPTION
         )
 
         private fun getKind(main: String?): WeatherKind {

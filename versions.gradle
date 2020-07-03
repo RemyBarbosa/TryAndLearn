@@ -22,7 +22,7 @@ ext {
     navVersion = "2.3.0"
 
     // Square versions
-    retrofitVersion = "2.6.2"
+    retrofitVersion = "2.3.0"
 
     //Others
     koinVersion = "1.0.2"
@@ -32,9 +32,11 @@ ext {
     glideVersion = "4.11.0"
 
     // Tests
-    junitVersion              = '4.13'
-    mockitoVersion            = '2.2.0'
-    mockitoInlineVersion     = '3.1.0'
-    assertjVersion            = '3.11.1'
-    dataproviderVersion       = '2.0'
+    junitVersion = '4.13'
+    mockwebserverVersion = '3.8.0'
+    okhttp3IdlingVersion = '1.0.0'
+    mockitoVersion = '2.2.0'
+    mockitoInlineVersion = '3.1.0'
+    assertjVersion = '3.11.1'
+    dataproviderVersion = '2.0'
 }
