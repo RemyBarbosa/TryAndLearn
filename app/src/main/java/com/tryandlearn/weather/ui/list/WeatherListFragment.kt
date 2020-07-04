@@ -7,12 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.tryandlearn.R
 import com.tryandlearn.interface_adapter.base.ErrorState
 import com.tryandlearn.interface_adapter.base.LoadingState
 import com.tryandlearn.interface_adapter.weather.DailyWeatherViewModel
 import com.tryandlearn.interface_adapter.weather.model.WeatherUIModel
-import com.tryandlearn.R
-import com.tryandlearn.weather.ui.list.WeatherListFragmentDirections
 import com.tryandlearn.util.hide
 import com.tryandlearn.util.show
 import com.tryandlearn.weather.ui.adapter.WeatherListAdapter
@@ -41,10 +40,9 @@ class WeatherListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         hourly_weather_button.setOnClickListener {
-            val action = WeatherListFragmentDirections.actionWeatherListFragmentToWeatherDetailFragment2(
+            val action = WeatherListFragmentDirections.actionWeatherListFragmentToWeatherDetailFragment(
                 LATITUDE,
                 LONGITUDE,
-                COUNT,
                 UNITS,
                 APP_ID
             )
@@ -75,11 +73,11 @@ class WeatherListFragment : Fragment() {
     }
 
     private fun showDailyWeatherList(weatherUIModelList: List<WeatherUIModel>) {
-        if (hourly_weather_list.adapter == null) {
-            hourly_weather_list.adapter = WeatherListAdapter()
+        if (daily_weather_list.adapter == null) {
+            daily_weather_list.adapter = WeatherListAdapter()
 
         }
-        (hourly_weather_list.adapter as WeatherListAdapter).weatherList = weatherUIModelList.toMutableList()
+        (daily_weather_list.adapter as WeatherListAdapter).weatherList = weatherUIModelList.toMutableList()
         progress_bar.hide()
 
     }

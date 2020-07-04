@@ -10,7 +10,7 @@ class WeatherRepository(
     private val WeatherLocalDataSource: WeatherLocalDataSource
 ) {
     fun getDailyWeatherList(latitude: Float, longitude: Float, count: Int, units: String, appId: String): Flowable<List<Weather>> =
-        WeatherRemoteDataSource.getDailyWeatherList(latitude, longitude, count, units, appId).startWith(WeatherLocalDataSource.getDailyWeatherList())
+        WeatherRemoteDataSource.getDailyWeatherList(latitude, longitude, count, units, appId)
 
 
     fun getHourlyWeatherList(latitude: Float, longitude: Float, count: Int, units: String, appId: String): Flowable<List<Weather>> =

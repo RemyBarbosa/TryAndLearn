@@ -11,7 +11,7 @@ import com.jakewharton.espresso.OkHttp3IdlingResource
 import com.tryandlearn.R
 import com.tryandlearn.application.HomeActivity
 import com.tryandlearn.util.FileReader
-import com.tryandlearn.weather.ui.util.atPosition
+import com.tryandlearn.util.atPosition
 import okhttp3.OkHttpClient
 import okhttp3.mockwebserver.Dispatcher
 import okhttp3.mockwebserver.MockResponse
@@ -58,7 +58,7 @@ class WeatherListFragmentTest {
             }
         })
         reloadActivity()
-        onView(withId(R.id.hourly_weather_list))
+        onView(withId(R.id.daily_weather_list))
             .check(matches(atPosition(0, hasDescendant(withText("scattered clouds")))))
     }
 

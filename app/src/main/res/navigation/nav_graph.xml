@@ -10,7 +10,7 @@
         android:label="fragment_weather_list"
         tools:layout="@layout/fragment_weather_list" >
         <action
-            android:id="@+id/action_weatherListFragment_to_weatherDetailFragment2"
+            android:id="@+id/action_weatherListFragment_to_weatherDetailFragment"
             app:destination="@id/weatherDetailFragment" >
             <argument
                 android:name="latitude"
@@ -18,9 +18,6 @@
             <argument
                 android:name="longitude"
                 app:argType="float" />
-            <argument
-                android:name="count"
-                app:argType="integer" />
             <argument
                 android:name="units"
                 app:argType="string" />
@@ -40,9 +37,6 @@
         <argument
             android:name="longitude"
             app:argType="float" />
-        <argument
-            android:name="count"
-            app:argType="integer" />
         <argument
             android:name="units"
             app:argType="string" />

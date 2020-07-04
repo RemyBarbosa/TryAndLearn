@@ -19,7 +19,7 @@
         android:visibility="gone" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/hourly_weather_list"
+        android:id="@+id/daily_weather_list"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:clipToPadding="false"
@@ -32,9 +32,10 @@
 
 
     <TextView
-        android:id="@+id/hourly_weather_error"
+        android:id="@+id/daily_weather_error"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
         android:clipToPadding="false"
         android:orientation="vertical"
         android:visibility="gone"

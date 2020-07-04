@@ -2,10 +2,9 @@ package com.tryandlearn.weather.ui.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.tryandlearn.interface_adapter.weather.model.WeatherUIModel
 import com.tryandlearn.R
+import com.tryandlearn.interface_adapter.weather.model.WeatherUIModel
 import com.tryandlearn.util.inflateFromParent
-import com.tryandlearn.util.loadImage
 import com.tryandlearn.util.setTextOrInvisible
 import kotlinx.android.synthetic.main.daily_weather_item.view.*
 
@@ -32,9 +31,9 @@ class WeatherListAdapter : RecyclerView.Adapter<WeatherListAdapter.DailyWeatherL
         itemView: ViewGroup
     ) : RecyclerView.ViewHolder(itemView.inflateFromParent(R.layout.daily_weather_item)) {
         fun bind(weatherUIModel: WeatherUIModel) = with(itemView) {
-            daily_background.loadImage(weatherUIModel.imageUrl)
+            daily_icon.setImageResource(weatherUIModel.imageRes)
             daily_date.text = weatherUIModel.date
-            daily_descrption.setTextOrInvisible(weatherUIModel.description)
+            daily_description.setTextOrInvisible(weatherUIModel.description)
         }
     }
 }
