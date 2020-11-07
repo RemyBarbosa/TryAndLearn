@@ -2,18 +2,16 @@ package com.tryandlearn.application
 
 import android.app.Application
 import com.facebook.stetho.Stetho
-import org.koin.android.ext.android.startKoin
-import com.tryandlearn.application.di.applicationInjectionsModules
+import dagger.hilt.android.HiltAndroidApp
 
+@HiltAndroidApp
 open class BaseApplication : Application() {
 
-    open val koinApplicationInjectionsModules = applicationInjectionsModules
+//    open val koinApplicationInjectionsModules = applicationInjectionsModules
     override fun onCreate() {
         super.onCreate()
 
-        startKoin(this, koinApplicationInjectionsModules)
+       // startKoin(this, koinApplicationInjectionsModules)
         Stetho.initializeWithDefaults(this)
     }
-
-
 }

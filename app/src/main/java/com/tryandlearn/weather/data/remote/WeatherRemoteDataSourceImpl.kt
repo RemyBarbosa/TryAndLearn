@@ -4,8 +4,9 @@ import com.tryandlearn.entity.weather.Weather
 import com.tryandlearn.interface_adapter.weather.model.WeatherRemote
 import com.tryandlearn.use_case.weather.data.source.WeatherRemoteDataSource
 import io.reactivex.Flowable
+import javax.inject.Inject
 
-class WeatherRemoteDataSourceImpl(
+class WeatherRemoteDataSourceImpl @Inject constructor(
     private val mapper: WeatherRemote.Mapper,
     private val weatherRetrofitDataSource: WeatherRetrofitDataSource
 ) : WeatherRemoteDataSource {

@@ -2,6 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -33,4 +34,9 @@ dependencies {
 
     api "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
     api "org.koin:koin-android:$koinVersion"
+
+    api "com.google.dagger:hilt-android:$hiltVersion"
+    api 'com.google.dagger:dagger:2.28.3'
+    kapt 'com.google.dagger:dagger-compiler:2.28'
+    kapt "com.google.dagger:hilt-android-compiler:$hiltVersion"
 }

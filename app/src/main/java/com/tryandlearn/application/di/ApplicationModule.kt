@@ -13,7 +13,7 @@ import org.koin.android.viewmodel.ext.koin.viewModel
 import org.koin.dsl.module.module
 
 val applicationModule = module {
-    viewModel { DailyWeatherViewModel(get()) }
+    viewModel { DailyWeatherViewModel(get(), get()) }
     viewModel { HourlyWeatherViewModel(get()) }
 
     single { WeatherRemoteDataSourceImpl(get(), get()) as WeatherRemoteDataSource }

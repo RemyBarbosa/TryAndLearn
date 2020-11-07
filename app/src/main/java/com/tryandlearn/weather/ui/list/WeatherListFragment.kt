@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.tryandlearn.R
@@ -15,9 +16,10 @@ import com.tryandlearn.interface_adapter.weather.model.WeatherUIModel
 import com.tryandlearn.util.hide
 import com.tryandlearn.util.show
 import com.tryandlearn.weather.ui.adapter.WeatherListAdapter
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_weather_list.*
-import org.koin.android.viewmodel.ext.android.viewModel
 
+@AndroidEntryPoint
 class WeatherListFragment : Fragment() {
 
     companion object {
@@ -28,7 +30,7 @@ class WeatherListFragment : Fragment() {
         private const val APP_ID = "e373fbdfb7c805a59762e6388e9ede6b"
     }
 
-    private val viewModel by viewModel<DailyWeatherViewModel>()
+    private val viewModel by viewModels<DailyWeatherViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -1,13 +1,14 @@
 package com.tryandlearn.interface_adapter.weather
 
-import io.reactivex.Flowable
 import com.tryandlearn.interface_adapter.weather.model.WeatherUIModel
 import com.tryandlearn.use_case.weather.GetDailyWeatherUseCase
 import com.tryandlearn.use_case.weather.GetHourlyWeatherUseCase
+import io.reactivex.Flowable
 import java.util.*
+import javax.inject.Inject
 
 
-class WeatherManager(
+class WeatherManager @Inject constructor(
     private val getDailyWeatherUseCase: GetDailyWeatherUseCase,
     private val getHourlyWeatherUseCase: GetHourlyWeatherUseCase,
     private val mapper: WeatherUIModel.Mapper
@@ -20,11 +21,12 @@ class WeatherManager(
         appId: String
     ): Flowable<List<WeatherUIModel>> {
         val fiveDaysInMillis = 5 * 24 * 60 * 60 * 1000
-        return getDailyWeatherUseCase.execute(latitude, longitude, count, units, appId).map { list ->
-            list.filter {
-                it.dateTime * 1000 < Calendar.getInstance().timeInMillis + fiveDaysInMillis
-            }.map { mapper.fromEntity(it) }
-        }
+        return getDailyWeatherUseCase.execute(latitude, longitude, count, units, appId)
+            .map { list ->
+                list.filter {
+                    it.dateTime * 1000 < Calendar.getInstance().timeInMillis + fiveDaysInMillis
+                }.map { mapper.fromEntity(it) }
+            }
     }
 
     fun getHourlyWeatherList(
@@ -34,8 +36,9 @@ class WeatherManager(
         units: String,
         appId: String
     ): Flowable<List<WeatherUIModel>> {
-        return getHourlyWeatherUseCase.execute(latitude, longitude, count, units, appId).map { list ->
-            list.map { mapper.fromEntity(it) }
-        }
+        return getHourlyWeatherUseCase.execute(latitude, longitude, count, units, appId)
+            .map { list ->
+                list.map { mapper.fromEntity(it) }
+            }
     }
 }

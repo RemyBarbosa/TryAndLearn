@@ -45,4 +45,10 @@ dependencies {
     testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoVersion"
     testImplementation "org.assertj:assertj-core:$assertjVersion"
     testImplementation "com.tngtech.junit.dataprovider:junit4-dataprovider:$dataproviderVersion"
+
+
+
+    implementation 'androidx.hilt:hilt-common:1.0.0-alpha02'
+    implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha02'
+    kapt 'androidx.hilt:hilt-compiler:1.0.0-alpha02'
 }

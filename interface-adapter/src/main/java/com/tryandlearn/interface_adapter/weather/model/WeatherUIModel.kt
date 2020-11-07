@@ -5,15 +5,20 @@ import com.tryandlearn.entity.weather.Weather
 import com.tryandlearn.entity.weather.WeatherKind
 import com.tryandlearn.interface_adapter.R
 import java.util.*
+import javax.inject.Inject
 
 data class WeatherUIModel(
     val date: String,
     val imageRes: Int,
     val description: String
 ) {
-    class Mapper {
+    class Mapper @Inject constructor() {
         fun fromEntity(weather: Weather) = WeatherUIModel(
-            date = DateUtils.getRelativeTimeSpanString(weather.dateTime * 1000, Calendar.getInstance().timeInMillis, DateUtils.MINUTE_IN_MILLIS).toString(),
+            date = DateUtils.getRelativeTimeSpanString(
+                weather.dateTime * 1000,
+                Calendar.getInstance().timeInMillis,
+                DateUtils.MINUTE_IN_MILLIS
+            ).toString(),
             imageRes = getImageFromKind(weather.kind),
             description = weather.description
         )

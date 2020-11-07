@@ -5,8 +5,9 @@ import com.tryandlearn.entity.weather.WeatherKind
 import com.tryandlearn.use_case.weather.data.source.WeatherLocalDataSource
 import io.reactivex.Flowable
 import java.util.*
+import javax.inject.Inject
 
-class WeatherLocalDataSourceImpl : WeatherLocalDataSource {
+class WeatherLocalDataSourceImpl @Inject constructor() : WeatherLocalDataSource {
 
     override fun getDailyWeatherList(): Flowable<List<Weather>> {
         return Flowable.just(
