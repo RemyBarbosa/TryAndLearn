@@ -1,8 +1,8 @@
 package com.tryandlearn.interface_adapter.di
 
-import com.tryandlearn.interface_adapter.weather.WeatherManager
+import com.tryandlearn.interface_adapter.article.ArticleManager
 import org.koin.dsl.module
 
 val interfaceAdapterModule = module {
-    single { WeatherManager(get(), get(), get()) }
+    single { ArticleManager(get(), get()) }
 }

@@ -1,12 +1,12 @@
 package com.tryandlearn.interface_adapter.di
 
-import com.tryandlearn.interface_adapter.weather.model.WeatherRemote
-import com.tryandlearn.interface_adapter.weather.model.WeatherUIModel
+import com.tryandlearn.interface_adapter.article.model.ArticleRemote
+import com.tryandlearn.interface_adapter.article.model.ArticleUIModel
 import org.koin.dsl.module
 
 val mapperModule = module {
-    single { WeatherUIModel.Mapper() }
-    single { WeatherRemote.Mapper() }
+    single { ArticleUIModel.Mapper() }
+    single { ArticleRemote.Mapper() }
 
 
 }
