@@ -1,7 +1,7 @@
 package com.tryandlearn.application.di
 
 import com.tryandlearn.weather.data.remote.WeatherRetrofitDataSource
-import org.koin.dsl.module.module
+import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

@@ -4,6 +4,7 @@ import com.tngtech.java.junit.dataprovider.DataProvider
 import com.tngtech.java.junit.dataprovider.DataProviderRunner
 import com.tngtech.java.junit.dataprovider.UseDataProvider
 import com.tryandlearn.entity.weather.WeatherKind
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
 
@@ -48,10 +49,10 @@ class WeatherRemoteMapperTest {
         // Then
 
         with(weather) {
-            org.assertj.core.api.Assertions.assertThat(dateTime).isEqualTo(3)
-            org.assertj.core.api.Assertions.assertThat(kind).isEqualTo(expectedWeatherKind)
-            org.assertj.core.api.Assertions.assertThat(description).isEqualTo("description")
-            org.assertj.core.api.Assertions.assertThat(description).isEqualTo("04d")
+            assertThat(dateTime).isEqualTo(3)
+            assertThat(kind).isEqualTo(expectedWeatherKind)
+            assertThat(description).isEqualTo("description")
+            assertThat(description).isEqualTo("04d")
         }
     }
 }

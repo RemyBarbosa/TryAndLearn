@@ -9,8 +9,8 @@ import com.tryandlearn.use_case.weather.data.source.WeatherLocalDataSource
 import com.tryandlearn.use_case.weather.data.source.WeatherRemoteDataSource
 import com.tryandlearn.weather.data.local.WeatherLocalDataSourceImpl
 import com.tryandlearn.weather.data.remote.WeatherRemoteDataSourceImpl
-import org.koin.android.viewmodel.ext.koin.viewModel
-import org.koin.dsl.module.module
+import org.koin.android.viewmodel.dsl.viewModel
+import org.koin.dsl.module
 
 val applicationModule = module {
     viewModel { DailyWeatherViewModel(get()) }
